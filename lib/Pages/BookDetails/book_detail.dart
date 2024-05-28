@@ -63,7 +63,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "About book",
+                        "About Author",
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ],
