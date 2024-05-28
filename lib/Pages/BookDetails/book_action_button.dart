@@ -5,13 +5,14 @@ import 'package:get/get.dart';
 
 class BookActionBtn extends StatelessWidget {
   final String bookUrl;
-  const BookActionBtn({super.key, required this.bookUrl});
+  final String bookName;
+  const BookActionBtn({super.key, required this.bookUrl, required this.bookName});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(15)),
@@ -22,12 +23,13 @@ class BookActionBtn extends StatelessWidget {
             onTap: () {
               Get.to(BookPage(
                 bookUrl: bookUrl,
+                bookName: bookName,
               ));
             },
             child: Row(
               children: [
                 SvgPicture.asset("assets/Icons/book.svg"),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   "READ BOOK",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -49,7 +51,7 @@ class BookActionBtn extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset("assets/Icons/play.svg"),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
                 "PLAY BOOK",
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(

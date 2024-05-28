@@ -13,18 +13,18 @@ class AuthPage extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   "Welcome To E BOOK",
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: Theme.of(context).colorScheme.background),
                 ),
-                SizedBox(height: 60),
-                AuthPageBody(),
+                const SizedBox(height: 60),
+                const AuthPageBody(),
               ],
             ),
           ),

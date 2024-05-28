@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
     }
   }
 
-  const HomePage({Key? key});
+  const HomePage({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
     TextEditingController searchController = TextEditingController();
 
     return Scaffold(
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: RefreshIndicator(
         onRefresh: () {
           // Fetch all books again from Firebase
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                 color: Theme.of(context).colorScheme.primary,
                 child: Expanded(
                   child: Row(
@@ -52,9 +52,9 @@ class HomePage extends StatelessWidget {
                       Expanded(
                         child: Column(
                           children: [
-                            SizedBox(height: 30),
-                            HomeAppBar(),
-                            SizedBox(height: 50),
+                            const SizedBox(height: 30),
+                            const HomeAppBar(),
+                            const SizedBox(height: 50),
                             Row(
                               children: [
                                 Text(
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Row(
                               children: [
                                 Flexible(
@@ -88,13 +88,13 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             TextField(
                               controller: searchController,
                               decoration: InputDecoration(
                                 hintText: 'Search for books',
-                                prefixIcon: Icon(Icons.search),
-                                border: OutlineInputBorder(
+                                prefixIcon: const Icon(Icons.search),
+                                border: const OutlineInputBorder(
                                 ),
                                 fillColor: Theme.of(context)
                                     .colorScheme
@@ -107,7 +107,7 @@ class HomePage extends StatelessWidget {
                                 bookController.filterBooks(value);
                               },
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Row(
                               children: [
                                 Text(
@@ -123,7 +123,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
@@ -143,7 +143,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Column(
@@ -156,7 +156,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Obx(
@@ -177,7 +177,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         Text(
@@ -186,7 +186,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Obx(() => Column(
                       children: bookController.filteredBooks
                           .map(

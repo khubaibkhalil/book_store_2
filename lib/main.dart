@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'E BOOK',
       theme: lightTheme,
       // home: const WelcomePage(),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

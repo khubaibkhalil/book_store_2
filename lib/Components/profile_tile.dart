@@ -31,7 +31,7 @@ class ProfileBookTile extends StatelessWidget {
       child: InkWell(
         onTap: ontap,
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
             borderRadius: BorderRadius.circular(15),
@@ -48,7 +48,7 @@ class ProfileBookTile extends StatelessWidget {
                           .withOpacity(0.2),
                       spreadRadius: 2,
                       blurRadius: 8,
-                      offset: Offset(2, 2),
+                      offset: const Offset(2, 2),
                     )
                   ],
                 ),
@@ -60,7 +60,7 @@ class ProfileBookTile extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class ProfileBookTile extends StatelessWidget {
                         maxLines: 2,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -86,14 +86,14 @@ class ProfileBookTile extends StatelessWidget {
 
                         ],
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         "Price : $price",
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
 
                         children: [

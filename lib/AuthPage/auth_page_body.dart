@@ -10,7 +10,7 @@ class AuthPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isLogin = true.obs;
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).colorScheme.background,
@@ -31,8 +31,8 @@ class AuthPageBody extends StatelessWidget {
                         onTap: () {
                           isLogin.value = true;
                         },
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width / 2.5,
+                        child: SizedBox(
+                          width: MediaQuery.sizeOf(context).width / 3,
                           child: Column(
                             children: [
                               Text(
@@ -41,9 +41,9 @@ class AuthPageBody extends StatelessWidget {
                                     ? Theme.of(context).textTheme.bodyLarge
                                     : Theme.of(context).textTheme.labelLarge,
                               ),
-                              SizedBox(height: 5),
+                              const SizedBox(height: 5),
                               AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
+                                duration: const Duration(milliseconds: 200),
                                 width: isLogin.value ? 100 : 0,
                                 height: 3,
                                 decoration: BoxDecoration(
@@ -73,7 +73,7 @@ class AuthPageBody extends StatelessWidget {
                               ),
                               const SizedBox(height: 5),
                               AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
+                                duration: const Duration(milliseconds: 200),
                                 width: isLogin.value ? 0 : 100,
                                 height: 3,
                                 decoration: BoxDecoration(

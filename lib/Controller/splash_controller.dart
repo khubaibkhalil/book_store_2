@@ -1,7 +1,7 @@
 import 'package:book_store/Pages/Homepage/home_page.dart';
 import 'package:book_store/Pages/welcome_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
@@ -14,11 +14,11 @@ class SplashController extends GetxController {
   }
 
   void splaceController() {
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       if (auth.currentUser != null) {
-        Get.offAll(HomePage());
+        Get.offAll(const HomePage());
       } else {
-        Get.offAll(WelcomePage());
+        Get.offAll(const WelcomePage());
       }
     });
   }

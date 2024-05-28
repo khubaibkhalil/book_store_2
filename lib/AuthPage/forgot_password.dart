@@ -1,14 +1,21 @@
-import 'dart:math';
+// import 'dart:math';
 
 import 'package:book_store/Config/messages.dart';
-import 'package:book_store/Controller/auth_controller.dart';
+// import 'package:book_store/Controller/auth_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
-class ForgotPassword extends StatelessWidget {
-  ForgotPassword({super.key});
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({super.key});
+
+  @override
+  State<ForgotPassword> createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
   TextEditingController email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Future passwordRest() async {
@@ -22,7 +29,7 @@ class ForgotPassword extends StatelessWidget {
       }
     }
 
-    AuthController authController = Get.put(AuthController());
+    // AuthController authController = Get.put(AuthController());
     return Scaffold(
       appBar: AppBar(
         iconTheme: Theme.of(context)
@@ -48,7 +55,7 @@ class ForgotPassword extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.labelLarge,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextFormField(
               controller: email,
               decoration: InputDecoration(
@@ -56,12 +63,12 @@ class ForgotPassword extends StatelessWidget {
                 fillColor: Theme.of(context).colorScheme.primaryContainer,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   passwordRest();
                 },
-                child: Text("Reset Now")),
+                child: const Text("Reset Now")),
           ],
         ),
       ),

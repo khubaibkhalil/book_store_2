@@ -27,18 +27,18 @@ class BookDetailsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MyBackButton(),
+            const MyBackButton(),
             SvgPicture.asset(
               "assets/Icons/heart.svg",
               color: Theme.of(context).colorScheme.background,
             ),
           ],
         ),
-        SizedBox(height: 40),
+        const SizedBox(height: 40),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -51,7 +51,7 @@ class BookDetailsHeader extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Text(
           title,
           maxLines: 1,
@@ -66,7 +66,7 @@ class BookDetailsHeader extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           description,
           maxLines: 2,
@@ -75,7 +75,7 @@ class BookDetailsHeader extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

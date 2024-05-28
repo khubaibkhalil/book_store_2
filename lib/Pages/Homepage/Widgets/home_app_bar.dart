@@ -1,4 +1,4 @@
-import 'package:book_store/Config/colors.dart';
+// import 'package:book_store/Config/colors.dart';
 import 'package:book_store/Config/default_profile.dart';
 import 'package:book_store/Controller/auth_controller.dart';
 import 'package:book_store/Pages/ProfilePage/profile_page.dart';
@@ -29,7 +29,7 @@ class HomeAppBar extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            Get.to(ProfilePage());
+            Get.to(const ProfilePage());
           },
           child: CircleAvatar(
               radius: 25,

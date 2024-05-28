@@ -27,7 +27,7 @@ class LoginForm extends StatelessWidget {
         TextField(
           controller: password,
           decoration: const InputDecoration(
-            hintText: "Passowrd",
+            hintText: "Password",
             prefixIcon: Icon(
               Icons.password_outlined,
             ),
@@ -38,7 +38,7 @@ class LoginForm extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                Get.to(ForgotPassword());
+                Get.to(const ForgotPassword());
               },
               child: Text("Forgot Password ? ",
                   style: TextStyle(
@@ -51,7 +51,7 @@ class LoginForm extends StatelessWidget {
         const SizedBox(height: 60),
         Obx(
           () => authController.isLoading.value
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -60,7 +60,7 @@ class LoginForm extends StatelessWidget {
                         authController.loginWithEmailAndPassword(
                             email.text, password.text);
                       },
-                      child: Text("Login"),
+                      child: const Text("Login"),
                     )
                   ],
                 ),

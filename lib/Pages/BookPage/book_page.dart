@@ -6,11 +6,13 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BookPage extends StatelessWidget {
   final String bookUrl;
-  const BookPage({super.key, required this.bookUrl});
+  final String bookName;
+  const BookPage({super.key, required this.bookUrl, required this.bookName});
 
   @override
   Widget build(BuildContext context) {
     PdfController pdfController = Get.put(PdfController());
+
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
@@ -18,7 +20,7 @@ class BookPage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Book title",
+          bookName,
           style: Theme.of(context)
               .textTheme
               .headlineMedium

@@ -8,7 +8,7 @@ import 'package:book_store/Pages/AddNewBook/add_new_book.dart';
 import 'package:book_store/Pages/BookDetails/book_detail.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key});
+  const ProfilePage({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
 
         onPressed: () {
-          Get.to(AddNewBookPage());
+          Get.to(const AddNewBookPage());
         },
         child: Icon(
           Icons.add,
@@ -42,7 +42,7 @@ class ProfilePage extends StatelessWidget {
               authController.signout();
 
             },
-            icon: Icon(Icons.logout, color: Colors.white),
+            icon: const Icon(Icons.logout, color: Colors.white),
           )],
         title:  Text(
           "Profile",
@@ -60,7 +60,7 @@ class ProfilePage extends StatelessWidget {
           return Future.value();
         },
         child: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
 
@@ -73,37 +73,37 @@ class ProfilePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // SizedBox(height: 20),
-                        Row(
+                        const Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             // Your header content here
                           ],
                         ),
-                        SizedBox(height:40),
+                        const SizedBox(height:40),
                         Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100),
                               border: Border.all(
                                 width: 2,
                                 color: Theme.of(context).colorScheme.background,
                               )),
-                          child: Container(
+                          child: SizedBox(
                             width: 120,
                             height: 120,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(100),
                               child: Image.network(
-                                "${authController.auth.currentUser!.photoURL ?? defaultProfile}",
+                                authController.auth.currentUser!.photoURL ?? defaultProfile,
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Text(
-                          "${authController.auth.currentUser!.displayName ?? "Local User"}",
+                          authController.auth.currentUser!.displayName ?? "Local User",
                           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               color: Theme.of(context).colorScheme.background),
                         ),
@@ -128,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                             style: Theme.of(context).textTheme.labelMedium),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Obx(
                           () => Column(
                         children: bookController.currentUserBooks

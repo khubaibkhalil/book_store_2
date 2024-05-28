@@ -22,10 +22,10 @@ class AuthController extends GetxController {
       );
       await auth.signInWithCredential(credential);
       successMessage('Login Success');
-      Get.offAll(HomePage());
+      Get.offAll(const HomePage());
     } catch (ex) {
-      print(ex);
-      errorMessage("Error ! Try Agin");
+
+      errorMessage("Error ! Try Again");
     }
     isLoading.value = false;
   }
@@ -33,7 +33,7 @@ class AuthController extends GetxController {
   void signout() async {
     await auth.signOut();
     successMessage('Logout');
-    Get.offAll(WelcomePage());
+    Get.offAll(const WelcomePage());
   }
 
   Future<void> loginWithEmailAndPassword(String email, String password) async {
@@ -41,7 +41,7 @@ class AuthController extends GetxController {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
       successMessage('Login Success');
-      Get.offAll(HomePage());
+      Get.offAll(const HomePage());
     } on FirebaseAuthException catch (e) {
       print('Failed with error code: ${e.code}');
       print(e.message);
@@ -56,10 +56,9 @@ class AuthController extends GetxController {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       successMessage('SignUp Success');
-      Get.offAll(HomePage());
+      Get.offAll(const HomePage());
     } on FirebaseAuthException catch (e) {
-      print('Failed with error code: ${e.code}');
-      print(e.message);
+
       errorMessage(e.code);
     }
     isLoading.value = false;

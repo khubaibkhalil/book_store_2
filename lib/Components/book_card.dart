@@ -31,7 +31,7 @@ class BookCard extends StatelessWidget {
                           .withOpacity(0.2),
                       spreadRadius: 2,
                       blurRadius: 8,
-                      offset: Offset(2, 2),
+                      offset: const Offset(2, 2),
                     )
                   ],
                 ),
@@ -47,7 +47,7 @@ class BookCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 title,
                 textAlign: TextAlign.center,

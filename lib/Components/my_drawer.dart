@@ -27,7 +27,7 @@ class MyDrawer extends StatelessWidget {
       "Books are the treasured wealth of the world. — Henry David Thoreau",
       "A book is like a garden carried in the pocket. — Chinese Proverb"
     ];
-    String _showRandomQuote() {
+    String showRandomQuote() {
       final random = Random();
       return quotes[random.nextInt(quotes.length)];
     }
@@ -37,25 +37,25 @@ class MyDrawer extends StatelessWidget {
         padding: const EdgeInsets.all(0),
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: primaryColor,
             ), //BoxDecoration
             child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: primaryColor),
+              decoration: const BoxDecoration(color: primaryColor),
               accountName: Text(
-                "${authController.auth.currentUser!.displayName ?? "Local User"}",
-                style: TextStyle(
+                authController.auth.currentUser!.displayName ?? "Local User",
+                style: const TextStyle(
                   fontSize: 18,
                 ),
               ),
               accountEmail: Text("${authController.auth.currentUser!.email}"),
-              currentAccountPictureSize: Size.square(50),
+              currentAccountPictureSize: const Size.square(50),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: primaryColor,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
                   child: Image.network(
-                    "${authController.auth.currentUser!.photoURL ?? defaultProfile}",
+                    authController.auth.currentUser!.photoURL ?? defaultProfile,
                     fit: BoxFit.cover,
                   ),
                 ), //Text
@@ -66,21 +66,21 @@ class MyDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text(' My Profile '),
             onTap: () {
-              Get.to(ProfilePage());
+              Get.to(const ProfilePage());
             },
           ),
           ListTile(
             leading: const Icon(Icons.book),
             title: const Text(' My Uploads '),
             onTap: () {
-              Get.to(ProfilePage());
+              Get.to(const ProfilePage());
             },
           ),
           ListTile(
             leading: const Icon(Icons.workspace_premium),
             title: const Text(' Magic '),
             onTap: () {
-              successMessage(_showRandomQuote());
+              successMessage(showRandomQuote());
             },
           ),
 

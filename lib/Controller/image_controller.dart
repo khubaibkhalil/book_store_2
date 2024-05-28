@@ -10,10 +10,10 @@ class ImageController extends GetxController {
     final XFile? image =
         await imagePicker.pickImage(source: ImageSource.gallery);
     if (image != null) {
-      var uuid = Uuid();
+      var uuid = const Uuid();
       var fileName = uuid.v1();
       var response = FirebaseStorage.instance.ref().child("Image/$fileName");
-      print(response.storage.ref().getDownloadURL());
+      // print(response.storage.ref().getDownloadURL());
     }
   }
 }

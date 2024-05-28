@@ -1,5 +1,5 @@
 import 'package:book_store/Controller/auth_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,7 +47,7 @@ class SignupForm extends StatelessWidget {
         const SizedBox(height: 60),
         Obx(
           () => authController.isLoading.value
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -56,7 +56,7 @@ class SignupForm extends StatelessWidget {
                         authController.signupWithEmailPassword(
                             email.text, password.text);
                       },
-                      child: Text("Signup"),
+                      child: const Text("Signup"),
                     )
                   ],
                 ),

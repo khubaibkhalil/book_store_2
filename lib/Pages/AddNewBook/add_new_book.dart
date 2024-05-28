@@ -1,15 +1,15 @@
-import 'package:book_store/Components/book_tile.dart';
+// import 'package:book_store/Components/book_tile.dart';
 import 'package:book_store/Components/multi_line_text_form_field.dart';
 import 'package:book_store/Components/my_back_button.dart';
 import 'package:book_store/Components/my_text_form_field.dart';
 import 'package:book_store/Config/colors.dart';
 import 'package:book_store/Controller/book_controller.dart';
 import 'package:book_store/Controller/pdf_controller.dart';
-import 'package:book_store/Models/data.dart';
-import 'package:book_store/Pages/BookDetails/book_detail.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:book_store/Models/data.dart';
+// import 'package:book_store/Pages/BookDetails/book_detail.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class AddNewBookPage extends StatelessWidget {
@@ -34,12 +34,12 @@ class AddNewBookPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          MyBackButton(),
+                          const MyBackButton(),
                           Text(
                             "ADD NEW BOOK",
                             style: Theme.of(context)
@@ -50,10 +50,10 @@ class AddNewBookPage extends StatelessWidget {
                                       Theme.of(context).colorScheme.background,
                                 ),
                           ),
-                          SizedBox(width: 70)
+                          const SizedBox(width: 70)
                         ],
                       ),
-                      SizedBox(height: 60),
+                      const SizedBox(height: 60),
                       InkWell(
                           onTap: () {
                             bookController.pickImage();
@@ -68,7 +68,7 @@ class AddNewBookPage extends StatelessWidget {
                               ),
                               child: Center(
                                 child: bookController.isImageUploading.value
-                                    ? CircularProgressIndicator(
+                                    ? const CircularProgressIndicator(
                                         color: primaryColor,
                                       )
                                     : bookController.imageUrl.value == ""
@@ -85,7 +85,7 @@ class AddNewBookPage extends StatelessWidget {
                               ),
                             ),
                           )),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 )
@@ -99,7 +99,7 @@ class AddNewBookPage extends StatelessWidget {
                     Expanded(
                       child: Obx(
                         () => Container(
-                          padding: EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             color: bookController.pdfUrl.value == ""
                                 ? Theme.of(context).colorScheme.primary
@@ -107,7 +107,7 @@ class AddNewBookPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: bookController.isPdfUploading.value
-                              ? Center(
+                              ? const Center(
                                   child: CircularProgressIndicator(
                                     color: backgroudColor,
                                   ),
@@ -123,7 +123,7 @@ class AddNewBookPage extends StatelessWidget {
                                         children: [
                                           Image.asset(
                                               "assets/Icons/upload.png"),
-                                          SizedBox(width: 8),
+                                          const SizedBox(width: 8),
                                           Text(
                                             "Book PDF",
                                             style: Theme.of(context)
@@ -150,7 +150,7 @@ class AddNewBookPage extends StatelessWidget {
                                             "assets/Icons/delete.png",
                                             width: 20,
                                           ),
-                                          SizedBox(width: 8),
+                                          const SizedBox(width: 8),
                                           Text(
                                             "Delete Pdf",
                                             style: Theme.of(context)
@@ -170,40 +170,40 @@ class AddNewBookPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 MyTextFormField(
                   hintText: "Book title",
                   icon: Icons.book,
                   controller: bookController.title,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 MultiLineTextFormField(
                     hintText: "Book Description",
                     controller: bookController.des),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 MyTextFormField(
                   hintText: "Author Name",
                   icon: Icons.person,
                   controller: bookController.auth,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 MyTextFormField(
                   hintText: "About Author",
                   icon: Icons.person,
                   controller: bookController.aboutAuth,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Expanded(
                       child: MyTextFormField(
                         isNumber: true,
                         hintText: "Price",
-                        icon: Icons.currency_rupee,
+                        icon: Icons.monetization_on,
                         controller: bookController.price,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: MyTextFormField(
                         hintText: "Pages",
@@ -214,7 +214,7 @@ class AddNewBookPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Expanded(
@@ -224,7 +224,7 @@ class AddNewBookPage extends StatelessWidget {
                         controller: bookController.language,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: MyTextFormField(
                         hintText: "Audio Len",
@@ -234,7 +234,7 @@ class AddNewBookPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
@@ -243,7 +243,7 @@ class AddNewBookPage extends StatelessWidget {
                           Get.back();
                         },
                         child: Container(
-                          padding: EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
@@ -253,11 +253,11 @@ class AddNewBookPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.close,
                                 color: Colors.red,
                               ),
-                              SizedBox(width: 8),
+                              const SizedBox(width: 8),
                               Text(
                                 "CANCEL",
                                 style: Theme.of(context)
@@ -272,17 +272,17 @@ class AddNewBookPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                         child: Obx(
                       () => Container(
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: bookController.isPdfUploading.value
-                            ? Center(
+                            ? const Center(
                                 child: CircularProgressIndicator(),
                               )
                             : InkWell(
@@ -298,7 +298,7 @@ class AddNewBookPage extends StatelessWidget {
                                           .colorScheme
                                           .background,
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Text(
                                       "POST",
                                       style: Theme.of(context)

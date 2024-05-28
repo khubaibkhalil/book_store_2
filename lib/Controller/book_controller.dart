@@ -39,7 +39,6 @@ class BookController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     getAllBooks();
   }
@@ -61,7 +60,9 @@ class BookController extends GetxController {
         .doc(fAuth.currentUser!.uid)
         .collection("Books")
         .get();
-    currentUserBooks.assignAll(books.docs.map((doc) => BookModel.fromJson(doc.data())).toList());
+    for (var book in books.docs) {
+      currentUserBooks.add(BookModel.fromJson(book.data()));
+    }
   }
 
   void pickImage() async {
@@ -86,7 +87,21 @@ class BookController extends GetxController {
     isImageUploading.value = false;
   }
 
-  void removeBook(String bookTitle) async {
+  Future<void> showDeleteConfirmationDialog(String bookTitle) async {
+    return Get.defaultDialog(
+      title: "Confirm Delete",
+      middleText: "Are you sure you want to delete the book \"$bookTitle\"?",
+      textCancel: "Cancel",
+      textConfirm: "Delete",
+      confirmTextColor: Colors.white,
+      onConfirm: () {
+        deleteBook(bookTitle);
+        Get.back();
+      },
+    );
+  }
+
+  void deleteBook(String bookTitle) async {
     try {
       // Query to find the book's ID based on its title
       QuerySnapshot titleQuery = await db.collection("Books").where("title", isEqualTo: bookTitle).get();
@@ -122,6 +137,10 @@ class BookController extends GetxController {
       // Handle any errors
       errorMessage("Failed to remove book: $e");
     }
+  }
+
+  void removeBook(String bookTitle) {
+    showDeleteConfirmationDialog(bookTitle);
   }
 
   void createBook() async {
