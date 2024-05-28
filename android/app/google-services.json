@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "507015831528",
+    "project_id": "e-book-store-96c2c",
+    "storage_bucket": "e-book-store-96c2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507015831528:android:cc33b589fdf7161bc98e5d",
+        "android_client_info": {
+          "package_name": "com.student.book_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507015831528-p6bcl9th5f11rno04th26ovm767il9pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdzoIDle2Vm9lrgg7BbUyfuVxpbh9FY_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507015831528-ckm2pjv9ememg63v1i5gmsfirm4og2rr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "507015831528-ocsgndt1i24s0287rti1o72v289n9l1c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bookStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
